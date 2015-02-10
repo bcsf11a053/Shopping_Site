@@ -1,0 +1,137 @@
+﻿@model List<eProj.Models.bag>
+@{
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Food Code Proudly Presents By Themexpert</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+
+	<!-- Css -->
+	<link rel="stylesheet" href="~/content/nivo-slider.css" type="text/css" />
+	<link rel="stylesheet" href="~/content/owl.carousel.css">
+	<link rel="stylesheet" href="~/content/owl.theme.css">
+	<link rel="stylesheet" href="~/content/font-awesome.min.css">
+	<link rel="stylesheet" href="~/content/style.css">
+	<link rel="stylesheet" href="~/content/responsive.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<!-- jS -->
+	<script src="~/scripts/jquery.min.js" type="text/javascript"></script>
+	<script src="~/scripts/jquery.nivo.slider.js" type="text/javascript"></script>
+	<script src="~/scripts/owl.carousel.min.js" type="text/javascript"></script>
+	<script src="~/scripts/jquery.nicescroll.js"></script>
+	<script src="~/scripts/jquery.scrollUp.min.js"></script>
+	<script src="~/scripts/main.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+     <!-- validation-->
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+	<style>table,tr, th, td {
+    border: 1px solid black;
+}
+
+        </style>
+   <script>
+
+       $(document).ready(function () {
+
+          $('#searchResult').hide();
+
+           $('#c1').click(function () {
+
+               var from = $('#from').val();
+               var to = $('#to').val();
+               //  alert("from"+ from);
+              
+               $.getJSON("/admin/searchBags?from=" + from+"&&to="+to, function (data) {
+                   var link = "~/admin/deleteBag";
+                   $("#d1").hide();
+                   $("#t2").empty();
+                   $("#searchResult").show();
+                  // $('#searchResult').append('<th><td> Name </td><td> Description </td><td>   Price</td> <td>   link</td></th>');
+
+                   $.each(data, function (i, item) {
+                       
+                       $("#t2").append('<tr> <td>' + item.Id + '</td><td>' + item.Item_Num + '</td><td>' + item.image + '</td><td>' + item.description + '</td><td>' + item.price + '</td><td><a href=/admin/deleteBag/'+ item.Id +'>Delete</a> <a href=/admin/updateBag/'+ item.Id +'>Update</a></td></tr>');
+                     
+                     //  $('#searchResult').append('<tr><td>' + item.Id + '</td><td>' + item.description + '</td><td>' + item.price +  '</td><td> <a href="#"></a></td></tr>');
+                       
+                   });
+               });
+
+              
+               });
+
+       });
+    </script>
+</head>
+
+<h2>Delete/Update Bags</h2>
+    
+ <body>
+     Id from: <input type="text" id="from" />
+       to: <input type="text" id="to" />
+     <input type="button" id ="c1" value="filter" />
+
+     <div id="searchResult">
+         <table id="t2">
+        <tr>
+        <td>Id</td>
+        <td>Item Number</td>
+        <td>image</td>
+        <td> Description</td>
+        <td>price</td>
+            </tr>
+
+          <tr id="r2">
+         
+        </tr>
+             </table>
+     </div> 
+
+
+
+
+
+     <div id="d1">
+   <table id="t1">
+        <tr>
+        <td>Id</td>
+        <td>Item Number</td>
+        <td>image</td>
+        <td> Description</td>
+        <td>price</td>
+            </tr>
+        @foreach(var s in Model)
+        {
+           <tr>
+         
+        <td id="td1">@s.Id</td>
+        <td id="td2">@s.Item_Num</td>
+        <td id="td3">@s.image</td>
+        <td id="td4">@s.description</td>
+        
+        <td id="td5">@s.price</td>
+               <td id="td6">
+                 <a href="~/admin/deleteBag/@s.Id"> Delete</a>
+                 <a href="~/admin/updateBag/@s.Id"> Update</a>
+             </td>
+            </tr>
+            
+        }
+    </table>
+    
+      </div>
+ </body>
+    </html>

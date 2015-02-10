@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+       <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
+<style type="text/css">
+    a.fancybox img {
+        border: none;
+        box-shadow: 0 1px 7px rgba(0,0,0,0.6);
+        -o-transform: scale(1,1); -ms-transform: scale(1,1); -moz-transform: scale(1,1); -webkit-transform: scale(1,1); transform: scale(1,1); -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
+    } 
+    a.fancybox:hover img {
+        position: relative; z-index: 999; -o-transform: scale(1.03,1.03); -ms-transform: scale(1.03,1.03); -moz-transform: scale(1.03,1.03); -webkit-transform: scale(1.03,1.03); transform: scale(1.03,1.03);
+    }
+</style>
+</head>
+<body>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script>
+<script type="text/javascript">
+    $(function ($) {
+        var addToAll = false;
+        var gallery = true;
+        var titlePosition = 'inside';
+        $(addToAll ? 'img' : 'img.fancybox').each(function () {
+            var $this = $(this);
+            var title = $this.attr('title');
+            var src = $this.attr('data-big') || $this.attr('src');
+            var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
+            $this.wrap(a);
+        });
+        if (gallery)
+            $('a.fancybox').attr('rel', 'fancyboxgallery');
+        $('a.fancybox').fancybox({
+            titlePosition: titlePosition
+        });
+    });
+    $.noConflict();
+</script>
+    <!-- TOP HEADER Start
+    ================================================== -->
+	
+	<section id="top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7">
+					<p class="contact-action"><i class="fa fa-phone-square"></i>IN CASE OF ANY QUESTIONS, CALL THIS NUMBER: <strong>+565 975 658</strong></p>
+				</div>
+				<div class="col-md-3 clearfix">
+					<ul class="login-cart">
+						<li>
+							<a data-toggle="modal" data-target="#myModal" href="#">
+							<i class="fa fa-user"></i>
+								Login
+							</a>
+						</li>
+						<li>
+							<div class="cart dropdown">
+						  		<a data-toggle="dropdown" href="#"><i class="fa fa-shopping-cart"></i>Cart(1)</a>
+					  			<div class="dropdown-menu dropup">
+					  				<span class="caret"></span>
+						  			<ul class="media-list">
+								  		<li class="media">
+										    <img class="pull-left" src="~/images/product-item.jpg" alt="">
+										    <div class="media-body">
+										      	<h6>Italian Sauce
+								    				<span>$250</span>
+								    			</h6>
+								    		</div>
+								  		</li>
+									</ul>
+									<button class="btn btn-primary btn-sm">Checkout</button>
+							    </div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-2">
+					<div class="search-box">
+						<div class="input-group">
+					    	<input placeholder="Search Here" type="text" class="form-control">
+					      	<span class="input-group-btn">
+					        	<button class="btn btn-default" type="button"></button>
+					      	</span>
+					    </div><!-- /.input-group -->
+					</div><!-- /.search-box -->
+				</div>
+			</div> <!-- End Of /.row -->
+		</div>	<!-- End Of /.Container -->
+
+	
+	<!-- MODAL Start
+    	================================================== -->
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+		    	<div  class="modal-content" >
+		    		<div class="modal-header">
+		        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        		<h4 class="modal-title" id="myModalLabel" style="font-family:Yanone Kaffeesatz,sans-serif;font-size:30px;color:#555">Introduce Yourself</h4>
+		      		</div>
+			      	<div class="modal-body clearfix" style="float:left">
+
+						<form action="#" method="post" id="create-account_form" class="std">
+							<fieldset>
+								<h3 style="font-family:Yanone Kaffeesatz,sans-serif;font-size:35px;color:#fff" >Create your account</h3>
+								<div class="form_content clearfix">
+									<h4 style="font-family:Yanone Kaffeesatz,sans-serif;font-size:25px;color:#555">Enter your e-mail address to create an account.</h4>
+									<p class="text">
+										<label for="email_create" >E-mail address</label>
+										<span>
+											<input style="color:black" placeholder="E-mail address"  type="text" id="email_create" name="email_create" value="" class="account_input">
+					                    </span>
+									</p>
+									<p class="submit">
+										<button class="btn btn-primary">Create Your Account</button>
+									</p>
+								</div>
+							</fieldset>
+						</form>
+			      		<form action="" method="post" id="login_form" class="std">
+							<fieldset>
+								<h3 style="font-family:Yanone Kaffeesatz,sans-serif;font-size:35px;color:#fff">Already registered?</h3>
+								<div class="form_content clearfix">
+									<p class="text">
+									<label for="email">E-mail address</label>
+										<span><input placeholder="E-mail address" type="text" id="email" name="email" value="" class="account_input"style="color:black"></span>
+									</p>
+									<p class="text">
+									<label for="passwd">Password</label>
+										<span><input placeholder="Password" type="password" id="passwd" name="passwd" value="" class="account_input"style="color:black"></span>
+									</p>
+									<p class="lost_password">
+										<a href="#popab-password-reset" class="popab-password-link">Forgot your password?</a>
+									</p>
+									<p class="submit">
+										<button class="btn btn-success">Log in</button>
+									</p>
+								</div>
+							</fieldset>
+						</form>
+			      	</div>
+			      	<div class="modal-footer">
+			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      	</div>
+			      	
+		    	</div>
+		  	</div>
+		</div>	
+	</section>  <!-- End of /Section -->
+	
+
+
+	<!-- LOGO Start
+    ================================================== -->
+	
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<a href="index.cshtml">
+                        <img src="~/images/womenfce.jpg" alt="logo" style="height:157px">
+						<img src="~/images/ladiesColl.png" alt="logo">
+					</a>
+				</div>	<!-- End of /.col-md-12 -->
+			</div>	<!-- End of /.row -->
+		</div>	<!-- End of /.container -->
+	</header> <!-- End of /Header -->
+
+	
+
+
+	<!-- MENU Start
+    ================================================== -->
+
+	<nav class="navbar navbar-default">
+		<div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		    </div> <!-- End of /.navbar-header -->
+
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      	<ul class="nav navbar-nav nav-main">
+		        	
+					
+                    <li><a href="~/admin/AddItems">ADD ITEMS</a></li>
+                    <li><a href="~/admin/UpdateItems">UPDATE ITEMS</a></li>
+                    <li><a href="~/admin/DeleteItems">DELETE ITEMS</a></li>
+                     
+
+					
+		        </ul> <!-- End of /.nav-main -->
+		    </div>	<!-- /.navbar-collapse -->
+		</div>	<!-- /.container-fluid -->
+	</nav>	<!-- End of /.nav -->
+
+
+    @RenderBody()
+    <!-- FOOTER Start
+    ================================================== -->
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="block clearfix">
+						<a href="#">
+                            <img src="~/images/womenfce.jpg" alt="logo" style="height:68px">
+							<img src="~/images/ladiesColl.png" alt="" style="width:210px;height:68px">
+						</a>
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+						</p>
+						<h4 class="connect-heading">CONNECT WITH US</h4>
+						<ul class="social-icon">
+							<li>
+								<a class="facebook-icon" href="#">
+									<i class="fa fa-facebook"></i>
+								</a>
+							</li>
+							<li>
+								<a class="plus-icon" href="#">
+									<i class="fa fa-google-plus"></i>
+								</a>
+							</li>
+							<li>
+								<a class="twitter-icon" href="#">
+									<i class="fa fa-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a class="pinterest-icon" href="#">
+									<i class="fa fa-pinterest"></i>
+								</a>
+							</li>
+							<li>
+								<a class="linkedin-icon" href="#">
+									<i class="fa fa-linkedin"></i>
+								</a>
+							</li>
+						</ul>	<!-- End Of /.social-icon -->
+					</div>	<!-- End Of /.block -->
+				</div> <!-- End Of /.Col-md-4 -->
+				<div class="col-md-4">
+					<div class="block">
+						<h4>GET IN TOUCH</h4>
+						<p ><i class="fa  fa-map-marker"></i> <span>Food Code d.o.o.,</span>1000 Ljubljana Celovska cesta 135, Slovenia</p>
+						<p> <i class="fa  fa-phone"></i> <span>Phone:</span> (+386) 40 123 456 </p>
+
+						<p> <i class="fa  fa-mobile"></i> <span>Mobile:</span> (+386) 40 654 123 651</p>
+ 
+						<p class="mail"><i class="fa  fa-envelope"></i>Eamil: <span>info@sitename.com</span></p>
+					</div>	<!-- End Of /.block -->
+				</div> <!-- End Of Col-md-3 -->
+				
+			</div> <!-- End Of /.row -->
+		</div> <!-- End Of /.Container -->
+		
+
+
+	<!-- FOOTER-BOTTOM Start
+    ================================================== -->
+
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="cash-out pull-left">
+							<li>
+								<a href="#">
+									<img src="~/images/American-Express.png" alt="">	
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="~/images/PayPal.png" alt="">	
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="~/images/Maestro.png" alt="">	
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="~/images/Visa.png" alt="">	
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="~/images/Visa-Electron.png" alt="">	
+								</a>
+							</li>
+						</ul>
+							</div>	<!-- End Of /.col-md-12 -->	
+				</div>	<!-- End Of /.row -->	
+			</div>	<!-- End Of /.container -->	
+		</div>	<!-- End Of /.footer-bottom -->
+	</footer> <!-- End Of Footer -->
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+@{
+    ViewBag.Title = "_Layout_customer";
+}
+
+<h2>_Layout_customer</h2>

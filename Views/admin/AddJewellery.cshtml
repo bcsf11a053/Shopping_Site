@@ -1,0 +1,60 @@
+﻿@model eProj.Models.bag
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Food Code Proudly Presents By Themexpert</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+
+	<!-- Css -->
+	<link rel="stylesheet" href="~/content/nivo-slider.css" type="text/css" />
+	<link rel="stylesheet" href="~/content/owl.carousel.css">
+	<link rel="stylesheet" href="~/content/owl.theme.css">
+	<link rel="stylesheet" href="~/content/bootstrap.min.css">
+	<link rel="stylesheet" href="~/content/font-awesome.min.css">
+	<link rel="stylesheet" href="~/content/style.css">
+	<link rel="stylesheet" href="~/content/responsive.css">
+
+	<!-- jS -->
+	<script src="~/Scripts/jquery.min.js" type="text/javascript"></script>
+	<script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
+	<script src="~/Scripts/jquery.nivo.slider.js" type="text/javascript"></script>
+	<script src="~/Scripts/owl.carousel.min.js" type="text/javascript"></script>
+	<script src="~/Scripts/jquery.nicescroll.js"></script>
+	<script src="~/Scripts/jquery.scrollUp.min.js"></script>
+	<script src="~/Scripts/main.js" type="text/javascript"></script>
+
+
+</head>
+
+<h2>Add Jewellery</h2>
+ <body>
+     <form action="/admin/addJewelleryValidate" method="post" enctype="multipart/form-data">
+          
+
+     <div>@Html.LabelFor(b=> b.Item_Num,new { style="font-size:160%;"})</div>
+      <div>@Html.TextBoxFor(b => b.Item_Num)</div>
+
+      <div>@Html.LabelFor(b=> b.description,new { style="font-size:160%;"})</div>
+      <div>@Html.TextBoxFor(b => b.description)</div>
+
+      <div>@Html.LabelFor(b=> b.price,new { style="font-size:160%;"})</div>
+      <div>@Html.TextBoxFor(b => b.price)</div>
+
+     <div>@Html.LabelFor(b=> b.image,new { style="font-size:160%;"})</div>
+    <input type="file" id="file" name="file" />
+     
+      
+ 
+     <input type="submit" value ="add" />
+      
+ </body>
+    </html>
