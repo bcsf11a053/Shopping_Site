@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout_admin.cshtml";
 }
 @{
-    ViewBag.Title = "UpdateItems";
+    ViewBag.Title = "Delete/UpdateItems";
 }
 <!doctype html>
 <html lang="en">
@@ -40,15 +40,15 @@
 <h2>UpdateItems</h2>
 <form>
   <form>
-   <div> @Html.ActionLink("Delete bags", "DeleteBags",new { @style="font-weight:bold;"})</div>
+   <div> @Html.ActionLink("Delete/update bags", "DeleteBags",new { @style="font-weight:bold;"})</div>
    
    
 
-    <div> @Html.ActionLink("Delete Shoes", "DeleteShoes",new { style="font-size:160%;"})</div>
+    <div> @Html.ActionLink("Delete/update Shoes", "DeleteShoes",new { style="font-size:160%;"})</div>
 
-    <div> @Html.ActionLink("Delete Jewellery", "DeleteJewel",new { style="font-size:160%;"})</div>
+    <div> @Html.ActionLink("Delete/update Jewellery", "DeleteJewel",new { style="font-size:160%;"})</div>
     
-    <div> @Html.ActionLink("Delete Watches", "DeleteWatch",new { style="font-size:160%;"})</div>
+    <div> @Html.ActionLink("Delete/update Watches", "DeleteWatch",new { style="font-size:160%;"})</div>
 </form>
 </form>
 </body>
