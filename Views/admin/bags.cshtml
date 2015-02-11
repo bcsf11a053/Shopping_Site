@@ -1,43 +1,12 @@
-
+@model List<eProj.Models.bag>
 @{
-    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+    Layout = "~/Views/Shared/_Layout_customer.cshtml";
 }
 
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Food Code Proudly Presents By Themexpert</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-	<!-- Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
-
-	<!-- Css -->
-	<link rel="stylesheet" href="~/content/nivo-slider.css" type="text/css" />
-	<link rel="stylesheet" href="~/content/owl.carousel.css">
-	<link rel="stylesheet" href="~/content/owl.theme.css">
-	<link rel="stylesheet" href="~/content/bootstrap.min.css">
-	<link rel="stylesheet" href="~/content/font-awesome.min.css">
-	<link rel="stylesheet" href="~/content/style.css">
-	<link rel="stylesheet" href="~/content/responsive.css">
-
-	<!-- jS -->
-	<script src="~/Scripts/jquery.min.js" type="text/javascript"></script>
-	<script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
-	<script src="~/Scripts/jquery.nivo.slider.js" type="text/javascript"></script>
-	<script src="~/Scripts/owl.carousel.min.js" type="text/javascript"></script>
-	<script src="~/Scripts/jquery.nicescroll.js"></script>
-	<script src="~/Scripts/jquery.scrollUp.min.js"></script>
-	<script src="~/Scripts/main.js" type="text/javascript"></script>
 
 
-</head>
-<body>
-
-
-
+    
+    
 
 
 	<section id="topic-header">
@@ -71,112 +40,26 @@
 					</div>	<!-- End of /.Products-heading -->
 					<div class="product-grid">
 						<div class="row">
+                            @foreach( var s in Model)
+                            {
 							<div class="col-md-4">
 								<div class="products">
-									<a >
-										<img class="fancybox"src="~/images/bag5.jpg" alt="">
+									<a href="single-product.html">
+										<img class="fancybox"src="@s.image"alt="">
 									</a>
-									<a >
-										<h4>Item# 1014</h4>
+									<a href="single-product.html">
+										<h4>@s.Item_Num</h4>
 									</a>
-									<p class="price">From: £69.99</p>
-									<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add </a>
+									<p class="price">From: @s.price</p>
+									<a class="view-link shutter" href="/Customer/AddBagToCart/@s.Id">
+										<i class="fa fa-plus-circle"></i>Add To Cart</a>
 								</div>	<!-- End of /.products -->
 							</div>	<!-- End of /.col-md-4 -->
-							<div class="col-md-4">
-								<div class="products">
-									<a href="single-product.html">
-										<img class="fancybox" src="~/images/bag2.jpg" alt="">
-									</a>
-									<a href="single-product.html">
-										<h4>Item# 1015</h4>
-									</a>
-									<p class="price">From: £69.99</p>
-									<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add To Cart</a>
-								</div>	<!-- End of /.products -->
-							</div> <!-- End Of Col-md-4 -->
-							<div class="col-md-4">
-								<div class="products">
-									<a href="single-product.html">
-										<img class="fancybox" src="~/images/bag13.jpg" alt="">
-									</a>
-									<a href="single-product.html">
-										<h4>Item# 1016</h4>
-									</a>
-									<p class="price">From: £69.99</p>
-									<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add To Cart</a>
-								</div>	<!-- End of /.products -->
-							</div> <!-- End Of /.Col-md-4 -->
-							<div class="col-md-4">
-								<div class="products">
-									<a href="single-product.html">
-										<img class="fancybox" src="~/images/bag14.jpg" alt="">
-									</a>
-									<a href="single-product.html">
-										<h4>Item# 1017</h4>
-									</a>
-									<p class="price">From: £69.99</p>
-									<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add To Cart</a>
-								</div>	<!-- End of /.products -->
-							</div> <!-- End Of /.Col-md-4 -->
-							<div class="col-md-4">
-								<div class="products">
-									<a href="single-product.html">
-										<img class="fancybox" src="~/images/bag9.jpg" alt="">
-									</a>
-									<a href="single-product.html">
-										<h4>Item# 1018</h4>
-									</a>
-									<p class="price">From: £69.99</p>
-									<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add To Cart</a>
-								</div>	<!-- End of /.products -->
-							</div> <!-- End Of /.Col-md-4 -->
-							<div class="col-md-4">
-								<div class="products">
-									<a href="single-product.html">
-										<img class="fancybox" src="~/images/bag10.jpg" alt="">
-									</a>
-									<a href="single-product.html">
-										<h4>Item# 1019</h4>
-									</a>
-									<p class="price">From: £69.99</p>
-									<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add To Cart</a>
-								</div>	<!-- End of /.products -->
-							</div> <!-- End Of /.Col-md-4 -->
-							<div class="col-md-4">
-								<div class="products">
-									<a href="single-product.html">
-										<img class="fancybox" src="~/images/bag11.jpg" alt="">
-									</a>
-									<a href="single-product.html">
-										<h4>Item# 1020</h4>
-									</a>
-									<p class="price">From: £69.99</p>
-									<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add To Cart</a>
-								</div>	<!-- End of /.products -->
-							</div> <!-- End Of /.Col-md-4 -->
-							<div class="col-md-4">
-								<div class="products">
-									<a href="single-product.html">
-										<img class="fancybox" src="~/images/bag12.jpg" alt="">
-									</a>
-									<a href="single-product.html">
-										<h4>Item# 1021</h4>
-									</a>
-									<p class="price">From: £69.99</p>
-									<div >
-										<a class="view-link shutter" href="#">
-										<i class="fa fa-plus-circle"></i>Add To Cart</a>
-									</div>
-								</div>	<!-- End of /.products -->
-							</div> <!-- End Of /.Col-md-4 -->
+                            }
+
+
+
+							
 						</div>	<!-- End of /.row -->
 					</div>	<!-- End of /.products-grid -->
 
@@ -280,5 +163,3 @@
 	
 	
 	<a id="back-top" href="#"></a>
-</body>
-</html>
